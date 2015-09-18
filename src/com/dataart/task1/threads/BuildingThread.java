@@ -1,7 +1,6 @@
 package com.dataart.task1.threads;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Base logic for building every part of 3 ones of a house: foundation, walls, roof  
