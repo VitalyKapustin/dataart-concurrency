@@ -14,7 +14,7 @@ public class Main {
 		ExecutorService executorService = Executors.newFixedThreadPool(THREADS_COUNT);
 		Lock lock = new ReentrantLock();
 		for (int i = 0; i < THREADS_COUNT; i++) {
-			executorService.submit(new Job(lock, "Document" + (i + 1)));
+			executorService.execute(new Job(lock, "Document" + (i + 1)));
 		}
 		executorService.shutdown();
 		executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);

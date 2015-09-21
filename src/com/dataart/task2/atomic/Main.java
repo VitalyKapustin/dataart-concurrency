@@ -52,7 +52,7 @@ public class Main {
 		
 		ExecutorService executorService = Executors.newFixedThreadPool(THREADS_NUMBER);		
 		for (int i = 0; i < THREADS_NUMBER; i++) {
-			executorService.submit(new IncrementerThread(counter, ITERATIONS_NUMBER));			
+			executorService.execute(new IncrementerThread(counter, ITERATIONS_NUMBER));			
 		}		
 		executorService.shutdown();
 		executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);

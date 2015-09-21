@@ -12,7 +12,7 @@ public class Main {
 		PrintQueue printQueue = new PrintQueue();		
 		ExecutorService executorService = Executors.newFixedThreadPool(DOCUMENT_COUNT);
 		for (int i = 0; i < DOCUMENT_COUNT; i++) {
-			executorService.submit(new Job(printQueue, "Document" + (i + 1)));
+			executorService.execute(new Job(printQueue, "Document" + (i + 1)));
 		}
 		executorService.shutdown();
 		executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);

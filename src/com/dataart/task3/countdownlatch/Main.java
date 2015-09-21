@@ -14,7 +14,7 @@ public class Main {
 		new Thread(new VideoConference(allParticipantsArrival)).start();
 		ExecutorService executorService = Executors.newFixedThreadPool(PARTICIPANTS_COUNT);
 		for (int i = 0; i < PARTICIPANTS_COUNT; i++) {
-			executorService.submit(new Participant(allParticipantsArrival));
+			executorService.execute(new Participant(allParticipantsArrival));
 		}
 		executorService.shutdown();
 		executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
